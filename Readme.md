@@ -33,8 +33,7 @@ Currently, two official plugins are available:
 - Deploy App on Vercel
 
 
-
-# You can check app this link :point_down:
+<!--# You can check app this link :point_down: -->
 
 
 
