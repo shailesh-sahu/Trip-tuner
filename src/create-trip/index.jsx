@@ -50,11 +50,11 @@ function CreateTrip() {
       setOpenDialog(true)
       return ;
     }
-    if(formData?.totalDays>5 || !formData?.location || !formData?.budget || !formData?.traveler){
-      toast("Please fill all details!")
+    if(formData?.totalDays>7 || !formData?.location || !formData?.budget || !formData?.traveler){
+      toast("Please fill all details or Check no. of days(days<=7)!")
       return ;
     }
-    toast("Form generated.");
+    toast("Trip Planing.. Please wait....");
     setLoading(true);
     const FINAL_PROMPT=AI_PROMPT
     .replace('{location}',formData?.location)
@@ -161,7 +161,7 @@ function CreateTrip() {
           </Button>
       </div>
 
-      <Dialog open={openDialog}>
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent>
           <DialogHeader>
             <DialogDescription>
