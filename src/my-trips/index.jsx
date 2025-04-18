@@ -16,9 +16,10 @@ function MyTrips() {
             navigation('/');
             return ;
         }
-        setUserTrips([]); // Fetch işlemi başlamadan önce boş bir dizi olarak ayarla
+
         const q=query(collection(db,'AiTrips'),where('userEmail','==',user?.email))
         const querySnapshot = await getDocs(q);
+        setUserTrips([]);
         querySnapshot.forEach((doc) => {
         console.log(doc.id, " => ", doc.data());
         setUserTrips(prev=>[...prev,doc.data()])
